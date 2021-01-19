@@ -1,6 +1,6 @@
 package kr.co.bonjin.portfolio.common.response;
 
-import kr.co.insungbank.app.isbank.common.error.ApiError;
+import kr.co.bonjin.portfolio.common.error.ApiError;
 import lombok.Getter;
 
 @Getter
