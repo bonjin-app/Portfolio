@@ -3,7 +3,7 @@
 2021.01.18. 월요일 시작.
 
 
-Configuration
+## Configuration
 - Java(1.8)
 - Spring Framework(Boot 2.4)
 - Data JPA
@@ -14,7 +14,7 @@ Configuration
 - JavaScript
 
 
-DevOps
+## DevOps
 - Git
 - Docker GitLab Container
 - Docker Jenkins Container
