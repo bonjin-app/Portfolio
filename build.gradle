@@ -1,7 +1,8 @@
 plugins {
     id 'org.springframework.boot' version '2.4.0'
-    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
     id 'java'
+    id 'com.ewerk.gradle.plugins.querydsl' version '1.0.10'
 }
 
 group = 'kr.co.bonjin'
@@ -33,6 +34,8 @@ dependencies {
     // Maria DB
     implementation "org.mariadb.jdbc:mariadb-java-client"
 
+    implementation 'com.querydsl:querydsl-jpa'
+
     // =============================== Support library ===============================
     // LomBok DI
     compileOnly 'org.projectlombok:lombok'
@@ -44,4 +47,25 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+
+// QueryDSL Config
+def querydslDir = "$buildDir/generated/querydsl"
+
+querydsl {
+    jpa = true
+    querydslSourcesDir = querydslDir
+}
+
+sourceSets {
+    main.java.srcDir querydslDir
+}
+
+configurations {
+    querydsl.extendsFrom compileClasspath
+}
+
+compileQuerydsl {
+    options.annotationProcessorPath = configurations.querydsl
 }
