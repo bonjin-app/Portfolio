@@ -10,7 +10,7 @@
 server:
 
   # Server Port
-  port: 19010
+  port: 8090
 
   # whitelabel 기본 오류 페이지 비활성화
   error:
@@ -94,8 +94,8 @@ spring:
         # HINT 표시
         use_sql_comments: true
 
-        # SQL 언어 MariaDB
-        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        # SQL 언어 MariaDB (자동 추가)
+        # dialect: org.hibernate.dialect.MySQL5InnoDBDialect
 
   # ===============================
   # = Mail Config
