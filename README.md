@@ -15,7 +15,23 @@
 
 
 ## DevOps
-- Git
-- Docker GitLab Container
+
+### Docker
+- Git(GitHub)
 - Docker Jenkins Container
 - Docker Nginx Container
+
+OR
+
+### AWS
+- Git(GitHub)
+- EC2
+- RDS
+- S3
+- Nginx
+- Travis CI
+- CodeDeploy
+
+
+## ETC
+- Domain: https://bonjin.co.kr
