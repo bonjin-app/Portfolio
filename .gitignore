@@ -38,3 +38,6 @@ out/
 
 ## Config ##
 /resources/application-real.yml
+
+## ETC ##
+/logs
