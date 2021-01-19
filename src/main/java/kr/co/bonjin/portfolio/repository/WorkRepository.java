@@ -1,4 +1,7 @@
 package kr.co.bonjin.portfolio.repository;
 
-public interface WorkRepository {
+import kr.co.bonjin.portfolio.entity.Work;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface WorkRepository extends JpaRepository<Work, Long> {
 }
