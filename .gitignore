@@ -36,5 +36,5 @@ out/
 ### VS Code ###
 .vscode/
 
-## ETC ##
+## Config ##
 /resources/application-real.yml
