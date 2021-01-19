@@ -37,7 +37,7 @@ out/
 .vscode/
 
 ## Config ##
-/resources/application-real.yml
+/src/main/resources/application-real.yml
 
 ## ETC ##
 /logs
