@@ -19,6 +19,7 @@
 - Git(GitHub)
 - Docker Jenkins Container
 - Docker Nginx Container
+- Jar & Embedded Tomcat
 
 OR
 
@@ -30,6 +31,7 @@ OR
 - Nginx
 - Travis CI
 - CodeDeploy
+- Jar & Embedded Tomcat
 
 
 ## ETC
