@@ -3,7 +3,7 @@
 2021.01.18. 월요일 시작.
 
 
-## Configuration
+## Environment
 - Java(1.8)
 - Spring Framework(Boot 2.4)
 - Data JPA
