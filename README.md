@@ -1,7 +1,6 @@
 # Portfolio
 
-2021.01.18. 월요일 시작.
-
+2021.01.18.
 
 ## Environment
 - Java(1.8)
