@@ -10,7 +10,8 @@
 - MariaDB 5
 - Thymeleaf 3
 - HTML3/CSS3
-- JavaScript
+- JavaScript(ES6)
+- Gradle
 
 
 ## DevOps
