@@ -38,6 +38,7 @@ out/
 
 ## Config ##
 src/main/resources/application-real.yml
+src/main/resources/application-dev.yml
 
 ## ETC ##
 logs/
