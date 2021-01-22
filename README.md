@@ -1,9 +1,12 @@
 # Portfolio
 
-2021.01.18. 월요일 시작.
+2021.01.18 ~ 2021.1.27
+
+인프라 구축을 위한 Portfolio를 작성중 입니다.
+제가 구현할 수 있는 기능들로 구성하려고 합니다.
 
 
-## Configuration
+## Environment
 - Java(1.8)
 - Spring Framework(Boot 2.4)
 - Data JPA
@@ -11,7 +14,8 @@
 - MariaDB 5
 - Thymeleaf 3
 - HTML3/CSS3
-- JavaScript
+- JavaScript(ES6)
+- Gradle
 
 
 ## DevOps
@@ -20,6 +24,7 @@
 - Git(GitHub)
 - Docker Jenkins Container
 - Docker Nginx Container
+- Jar & Embedded Tomcat
 
 OR
 
@@ -31,6 +36,7 @@ OR
 - Nginx
 - Travis CI
 - CodeDeploy
+- Jar & Embedded Tomcat
 
 
 ## ETC
