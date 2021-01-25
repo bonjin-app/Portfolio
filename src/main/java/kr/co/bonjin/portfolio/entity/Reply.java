@@ -16,6 +16,7 @@ public class Reply extends BaseEntity {
     // 순번
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "reply_id")
     private Long id;
 
     // 이름

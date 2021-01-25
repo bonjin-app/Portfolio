@@ -16,6 +16,7 @@ public class Work extends BaseEntity {
     // 순번
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "work_id")
     private Long id;
 
     // 타입

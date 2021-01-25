@@ -16,6 +16,7 @@ public class Contact {
     // 순번
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "contact_id")
     private Long id;
 
     // 이름
