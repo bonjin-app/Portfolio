@@ -1,4 +1,4 @@
-package kr.co.bonjin.portfolio.controller;
+package kr.co.bonjin.portfolio.web;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

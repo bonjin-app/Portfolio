@@ -1,7 +1,13 @@
 package kr.co.bonjin.portfolio.repository;
 
-import kr.co.bonjin.portfolio.entity.Work;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface WorkRepository extends JpaRepository<Work, Long> {
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+@Repository
+public class WorkRepository {
+
+    @PersistenceContext
+    private EntityManager entityManager;
 }

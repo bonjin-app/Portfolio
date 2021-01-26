@@ -1,4 +1,4 @@
-package kr.co.bonjin.portfolio.controller;
+package kr.co.bonjin.portfolio.web;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @Slf4j
-@RequestMapping("/contact")
+@RequestMapping("/about")
 @RequiredArgsConstructor
-public class ContactController {
+public class AboutController {
 
     @GetMapping
-    public String contactPage() {
-        return "contact";
+    public String aboutPage() {
+        return "about";
     }
 }

@@ -1,7 +1,13 @@
 package kr.co.bonjin.portfolio.repository;
 
-import kr.co.bonjin.portfolio.entity.Contact;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface ContactRepository extends JpaRepository<Contact, Long> {
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+@Repository
+public class ContactRepository {
+
+    @PersistenceContext
+    private EntityManager entityManager;
 }

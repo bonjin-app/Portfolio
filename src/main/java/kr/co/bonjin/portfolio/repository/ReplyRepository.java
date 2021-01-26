@@ -1,7 +1,13 @@
 package kr.co.bonjin.portfolio.repository;
 
-import kr.co.bonjin.portfolio.entity.Reply;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface ReplyRepository extends JpaRepository<Reply, Long> {
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+@Repository
+public class ReplyRepository {
+
+    @PersistenceContext
+    private EntityManager entityManager;
 }
