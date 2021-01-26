@@ -1,4 +1,4 @@
-package kr.co.bonjin.portfolio.domain.entity;
+package kr.co.bonjin.portfolio.domain;
 
 import lombok.*;
 

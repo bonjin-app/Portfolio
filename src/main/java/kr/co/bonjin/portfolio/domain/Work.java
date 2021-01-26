@@ -1,4 +1,4 @@
-package kr.co.bonjin.portfolio.domain.entity;
+package kr.co.bonjin.portfolio.domain;
 
 import lombok.*;
 
@@ -20,6 +20,9 @@ public class Work extends BaseEntity {
     private Long id;
 
     // 타입
+    @Enumerated(EnumType.STRING)
+    @Column(name = "type")
+    private WorkType type;
 
     // 이름
     @Column(name = "name")
