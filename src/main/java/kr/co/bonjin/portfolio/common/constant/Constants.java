@@ -8,5 +8,5 @@ public class Constants {
      */
     // Contact
     public static final int EMAIL_TEMPLATE_FLAG_CONTACT = 0;
-    public static final String EMAIL_TEMPLATE_ID = "util/template-contact";
+    public static final String EMAIL_TEMPLATE_ID = "widget/template-contact";
 }

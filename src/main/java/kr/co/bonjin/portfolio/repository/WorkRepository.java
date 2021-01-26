@@ -9,5 +9,5 @@ import javax.persistence.PersistenceContext;
 public class WorkRepository {
 
     @PersistenceContext
-    private EntityManager entityManager;
+    private EntityManager em;
 }

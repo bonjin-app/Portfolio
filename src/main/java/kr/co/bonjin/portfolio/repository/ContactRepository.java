@@ -9,5 +9,5 @@ import javax.persistence.PersistenceContext;
 public class ContactRepository {
 
     @PersistenceContext
-    private EntityManager entityManager;
+    private EntityManager em;
 }
