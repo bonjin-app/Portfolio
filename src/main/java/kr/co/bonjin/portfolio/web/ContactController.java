@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @Slf4j
-@RequestMapping("/contact")
+@RequestMapping(value = "/contact")
 @RequiredArgsConstructor
 public class ContactController {
 

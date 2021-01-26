@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @Slf4j
-@RequestMapping("/work")
+@RequestMapping(value = "/work")
 @RequiredArgsConstructor
 public class WorkController {
 
@@ -18,7 +18,7 @@ public class WorkController {
         return "work";
     }
 
-    @GetMapping("/{id}")
+    @GetMapping(value = "/{id}")
     public String workDetailPage(@PathVariable Long id) {
         return "work-detail";
     }
