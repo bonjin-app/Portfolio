@@ -12,6 +12,7 @@ public class WorkResponseDto {
     private String name;
     private String content;
     private String image;
+    private String site;
 
     public WorkResponseDto(Work work) {
         this.workId = work.getId();
@@ -19,5 +20,6 @@ public class WorkResponseDto {
         this.name = work.getName();
         this.content = work.getContent();
         this.image = work.getImage();
+        this.site = work.getSite();
     }
 }
