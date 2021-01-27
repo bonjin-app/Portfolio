@@ -2,9 +2,9 @@ package kr.co.bonjin.portfolio.common.config;
 
 import com.sun.tools.javac.util.List;
 import kr.co.bonjin.portfolio.domain.*;
-import kr.co.bonjin.portfolio.repository.ServiceRepository;
 import kr.co.bonjin.portfolio.service.MemberService;
 import kr.co.bonjin.portfolio.service.ReplyService;
+import kr.co.bonjin.portfolio.service.ServiceService;
 import kr.co.bonjin.portfolio.service.WorkService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
@@ -19,7 +19,7 @@ public class DevelopmentConfig {
     public CommandLineRunner dataLoader(MemberService memberService,
                                         WorkService workService,
                                         ReplyService replyService,
-                                        ServiceRepository serviceRepository) {
+                                        ServiceService serviceService) {
         return args -> {
 
             // Member
@@ -74,7 +74,7 @@ public class DevelopmentConfig {
                     .icon("la-shield-alt")
                     .items(List.of("Per User Permissions", "Communication encryption", "Personal information security"))
                     .build();
-            serviceRepository.save(service1);
+            serviceService.save(service1);
 
             Service service2 = Service.builder()
                     .title("Mobile Applications")
@@ -82,7 +82,7 @@ public class DevelopmentConfig {
                     .icon("la-mobile")
                     .items(List.of("Simple operation"))
                     .build();
-            serviceRepository.save(service2);
+            serviceService.save(service2);
 
             Service service3 = Service.builder()
                     .title("UX & UI Design")
@@ -90,7 +90,7 @@ public class DevelopmentConfig {
                     .icon("la-image")
                     .items(List.of("Easy to see UI UX", "Preferred design"))
                     .build();
-            serviceRepository.save(service3);
+            serviceService.save(service3);
 
             Service service4 = Service.builder()
                     .title("Light")
@@ -98,7 +98,7 @@ public class DevelopmentConfig {
                     .icon("la-feather-alt")
                     .items(List.of("Smooth movement"))
                     .build();
-            serviceRepository.save(service4);
+            serviceService.save(service4);
         };
     }
 }
