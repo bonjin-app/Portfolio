@@ -1,5 +1,6 @@
 package kr.co.bonjin.portfolio.common.config;
 
+import com.sun.tools.javac.util.List;
 import kr.co.bonjin.portfolio.domain.Member;
 import kr.co.bonjin.portfolio.domain.Reply;
 import kr.co.bonjin.portfolio.domain.Work;
@@ -30,18 +31,20 @@ public class DevelopmentConfig {
 
             Work work1 = Work.builder()
                     .name("Genius CHOI")
-                    .content("")
+                    .content("This is my first portfolio.")
                     .image("http://gigas.synology.me/portfolio/images/work/geniuschoi.png")
                     .site("http://gigas.synology.me:7070/geniuschoi")
+                    .language(List.of("Design","Xml", "Java", "Kotlin"))
                     .type(WorkType.WEB)
                     .build();
             workService.save(work1);
 
             Work work2 = Work.builder()
                     .name("제주 생활방언")
-                    .content("")
+                    .content("It is a dialect that originated in Jeju Island for a long time.")
                     .image("http://gigas.synology.me/portfolio/images/bonjin-work-01.png")
                     .site("https://play.google.com/store/apps/details?id=com.bonjin.B04")
+                    .language(List.of("HTML5","CSS3", "JavaScript", "Jquery"))
                     .type(WorkType.APP)
                     .build();
             workService.save(work2);

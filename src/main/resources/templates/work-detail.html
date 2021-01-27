@@ -29,17 +29,14 @@
                 <p class="mb-4"><span class="text-muted" th:text="${work.type}"></span></p>
 
                 <div class="mb-5">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores illo, id recusandae molestias
-                    illum unde pariatur, enim tempora.</p>
-
+                  <p th:text="${work.content}"></p>
                 </div>
 
                 <h4 class="h4 mb-3">What I did</h4>
                 <ul class="list-unstyled list-line mb-5">
-                  <li>Design</li>
-                  <li>HTML5/CSS3</li>
-                  <li>CMS</li>
-                  <li>Logo</li>
+                  <!-- START LANGUAGE -->
+                  <li th:each="l: ${work.language}" th:text="${l}"></li>
+                  <!-- END LANGUAGE -->
                 </ul>
 
                 <p><a th:href="${work.site}" class="readmore" target="_blank">Visit Website</a></p>

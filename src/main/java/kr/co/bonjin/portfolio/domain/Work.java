@@ -1,8 +1,10 @@
 package kr.co.bonjin.portfolio.domain;
 
+import kr.co.bonjin.portfolio.converter.StringListConverter;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Getter
@@ -39,4 +41,9 @@ public class Work extends BaseEntity {
     // 사이트
     @Column(name = "site")
     private String site;
+
+    // language
+    @Column(name = "language")
+    @Convert(converter = StringListConverter.class)
+    private List<String> language;
 }
