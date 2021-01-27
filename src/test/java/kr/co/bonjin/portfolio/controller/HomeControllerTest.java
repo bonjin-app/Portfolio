@@ -1,9 +1,6 @@
 package kr.co.bonjin.portfolio.controller;
 
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -21,7 +18,7 @@ class HomeControllerTest {
     protected MockMvc mockMvc;
 
     @BeforeAll
-    static void setup() {
+    static void initAll() {
         System.out.println("@BeforeAll - executes once before all test methods in this class");
     }
 
@@ -36,5 +33,13 @@ class HomeControllerTest {
         mockMvc.perform(get("/home"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("home"));
+    }
+
+    @AfterEach
+    void tearDown() {
+    }
+
+    @AfterAll
+    static void tearDownAll() {
     }
 }
