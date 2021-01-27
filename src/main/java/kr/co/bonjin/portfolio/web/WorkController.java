@@ -34,7 +34,14 @@ public class WorkController {
     }
 
     @GetMapping(value = "/{id}")
-    public String workDetailPage(@PathVariable Long id) {
+    public String workDetailPage(@PathVariable Long id, Model model) {
+        WorkResponseDto work = workService.findOne(id);
+        List<WorkResponseDto> works = workService.findAll();
+        List<ReplyResponseDto> replies = replyService.findAll();
+
+        model.addAttribute("work", work);
+        model.addAttribute("works", works);
+        model.addAttribute("replies", replies);
         return "work-detail";
     }
 }

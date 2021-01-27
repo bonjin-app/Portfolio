@@ -21,6 +21,7 @@
           </div>
         </div>
 
+        <!-- START WORK -->
         <div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
           <div th:each="work: ${works}" class="item col-sm-6 col-md-4 col-lg-4 mb-4" th:classappend="${#strings.toLowerCase(work.type)}">
             <a th:href="@{/work/{id}(id=${work.workId})}" class="item-wrap fancybox">
@@ -32,9 +33,11 @@
             </a>
           </div>
         </div>
+        <!-- END WORK -->
       </div>
     </div>
 
+    <!-- START REPLY -->
     <div class="site-section">
       <div class="container">
 
@@ -50,9 +53,9 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
+    <!-- END REPLY -->
   </main>
 
   </th:block>

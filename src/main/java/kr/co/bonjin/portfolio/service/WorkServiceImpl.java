@@ -28,6 +28,13 @@ public class WorkServiceImpl implements WorkService {
         return result;
     }
 
+    @Override
+    public WorkResponseDto findOne(Long id) {
+        Work work = workRepository.findOne(id);
+        WorkResponseDto result = new WorkResponseDto(work);
+        return result;
+    }
+
     @Transactional
     @Override
     public Long save(Work work) {

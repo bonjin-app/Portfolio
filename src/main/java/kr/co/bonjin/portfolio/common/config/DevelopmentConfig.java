@@ -1,8 +1,10 @@
 package kr.co.bonjin.portfolio.common.config;
 
+import kr.co.bonjin.portfolio.domain.Member;
 import kr.co.bonjin.portfolio.domain.Reply;
 import kr.co.bonjin.portfolio.domain.Work;
 import kr.co.bonjin.portfolio.domain.WorkType;
+import kr.co.bonjin.portfolio.service.MemberService;
 import kr.co.bonjin.portfolio.service.ReplyService;
 import kr.co.bonjin.portfolio.service.WorkService;
 import org.springframework.boot.CommandLineRunner;
@@ -15,13 +17,22 @@ import org.springframework.context.annotation.Profile;
 public class DevelopmentConfig {
 
     @Bean
-    public CommandLineRunner dataLoader(WorkService workService, ReplyService replyService) {
+    public CommandLineRunner dataLoader(MemberService memberService,
+                                        WorkService workService,
+                                        ReplyService replyService) {
         return args -> {
+
+            Member member = Member.builder()
+                    .name("GIGAS")
+                    .image("http://gigas.synology.me/portfolio/images/man-profile-512x512.png")
+                    .build();
+            memberService.save(member);
 
             Work work1 = Work.builder()
                     .name("Genius CHOI")
                     .content("")
                     .image("http://gigas.synology.me/portfolio/images/work/geniuschoi.png")
+                    .site("http://gigas.synology.me:7070/geniuschoi")
                     .type(WorkType.WEB)
                     .build();
             workService.save(work1);
@@ -30,6 +41,7 @@ public class DevelopmentConfig {
                     .name("제주 생활방언")
                     .content("")
                     .image("http://gigas.synology.me/portfolio/images/bonjin-work-01.png")
+                    .site("https://play.google.com/store/apps/details?id=com.bonjin.B04")
                     .type(WorkType.APP)
                     .build();
             workService.save(work2);

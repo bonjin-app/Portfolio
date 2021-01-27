@@ -19,4 +19,11 @@ public interface WorkService {
      * @return
      */
     Long save(Work work);
+
+    /**
+     * Work 단건 조회
+     * @param id
+     * @return
+     */
+    WorkResponseDto findOne(Long id);
 }
