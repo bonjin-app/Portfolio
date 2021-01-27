@@ -26,4 +26,8 @@ public class Reply extends BaseEntity {
     // 내용
     @Column(name = "content")
     private String content;
+
+    // 이미지 주소
+    @Column(name = "image")
+    private String image;
 }

@@ -1,5 +1,6 @@
 package kr.co.bonjin.portfolio.service;
 
+import kr.co.bonjin.portfolio.domain.Work;
 import kr.co.bonjin.portfolio.dto.WorkResponseDto;
 
 import java.util.List;
@@ -11,4 +12,11 @@ public interface WorkService {
      * @return
      */
     List<WorkResponseDto> findAll();
+
+    /**
+     * Work 저장
+     * @param work
+     * @return
+     */
+    Long save(Work work);
 }

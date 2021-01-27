@@ -27,4 +27,11 @@ public class WorkServiceImpl implements WorkService {
 
         return result;
     }
+
+    @Transactional
+    @Override
+    public Long save(Work work) {
+        workRepository.save(work);
+        return work.getId();
+    }
 }
