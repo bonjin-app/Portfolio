@@ -11,7 +11,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @ToString
 @Table(name = "contact")
-public class Contact {
+public class Contact extends BaseEntity {
 
     // 순번
     @Id

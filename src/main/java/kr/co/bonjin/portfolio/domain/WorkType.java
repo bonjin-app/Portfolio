@@ -1,5 +1,5 @@
 package kr.co.bonjin.portfolio.domain;
 
-public enum  WorkType {
+public enum WorkType {
     WEB, APP
 }

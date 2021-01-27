@@ -57,6 +57,15 @@ spring:
       max-request-size: 50MB
 
   # ===============================
+  # = DATA SOURCE (MARIADB)
+  # ===============================
+  datasource:
+    # 기본 DB
+    url: jdbc:mariadb://gigas.synology.me:3306/portfolio
+    username: bonjin
+    password: bonjin1234
+
+  # ===============================
   # = JPA / HIBERNATE
   # ===============================
   # SQL 문장의 로깅 활성화
@@ -84,6 +93,10 @@ spring:
 
         # HINT 표시
         use_sql_comments: true
+
+        # in으로 조회해버린다. 1000개 단위로 (max 1000 db에 따라 다르다.)
+        # 100~1000개가 좋다.
+        default_batch_fetch_size: 1000
 
         # SQL 언어 MariaDB (자동 추가)
         # dialect: org.hibernate.dialect.MySQL5InnoDBDialect

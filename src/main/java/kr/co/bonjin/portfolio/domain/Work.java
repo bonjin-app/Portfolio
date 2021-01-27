@@ -32,6 +32,10 @@ public class Work extends BaseEntity {
     @Column(name = "content")
     private String content;
 
+    // 이미지 주소
+    @Column(name = "image")
+    private String image;
+
     // 사이트
     @Column(name = "site")
     private String site;

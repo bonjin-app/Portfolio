@@ -15,14 +15,6 @@ public class ContactRepository {
     private EntityManager em;
 
     /**
-     * Contact 저장
-     * @param contact
-     */
-    public void save(Contact contact) {
-        em.persist(contact);
-    }
-
-    /**
      * Contact 단건 조회
      * @param id
      * @return
@@ -42,4 +34,13 @@ public class ContactRepository {
         ).getResultList();
         return contacts;
     }
+
+    /**
+     * Contact 저장
+     * @param contact
+     */
+    public void save(Contact contact) {
+        em.persist(contact);
+    }
+
 }

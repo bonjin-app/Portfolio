@@ -6,6 +6,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -30,6 +31,7 @@ class WorkRepositoryTest {
                     Work work = Work.builder()
                             .name("Work" + e)
                             .content("Content" + e)
+                            .image("http://gigas.synology.me/portfolio/images/work_image.jpeg")
                             .type(e % 2 == 0 ? WorkType.APP : WorkType.WEB)
                             .build();
                     workRepository.save(work);
