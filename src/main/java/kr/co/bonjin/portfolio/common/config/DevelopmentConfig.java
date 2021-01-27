@@ -26,6 +26,14 @@ public class DevelopmentConfig {
                     .build();
             workService.save(work1);
 
+            Work work2 = Work.builder()
+                    .name("제주 생활방언")
+                    .content("")
+                    .image("http://gigas.synology.me/portfolio/images/bonjin-work-01.png")
+                    .type(WorkType.APP)
+                    .build();
+            workService.save(work2);
+
             Reply reply1 = Reply.builder()
                     .name("GIGAS")
                     .content("Will you study for life?")

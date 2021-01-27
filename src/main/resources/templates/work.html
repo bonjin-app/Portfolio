@@ -16,14 +16,13 @@
             <div id="filters" class="filters">
               <a href="#" data-filter="*" class="active">All</a>
               <a href="#" data-filter=".web">Web</a>
-              <a href="#" data-filter=".ios">iOS</a>
-              <a href="#" data-filter=".android">Android</a>
+              <a href="#" data-filter=".app">App</a>
             </div>
           </div>
         </div>
 
         <div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
-          <div th:each="work: ${works}" class="item web col-sm-6 col-md-4 col-lg-4 mb-4">
+          <div th:each="work: ${works}" class="item col-sm-6 col-md-4 col-lg-4 mb-4" th:classappend="${#strings.toLowerCase(work.type)}">
             <a th:href="@{/work/{id}(id=${work.workId})}" class="item-wrap fancybox">
               <div class="work-info">
                 <h3 th:text="${work.name}"></h3>
