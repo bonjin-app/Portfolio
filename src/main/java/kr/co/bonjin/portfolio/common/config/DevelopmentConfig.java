@@ -1,10 +1,8 @@
 package kr.co.bonjin.portfolio.common.config;
 
 import com.sun.tools.javac.util.List;
-import kr.co.bonjin.portfolio.domain.Member;
-import kr.co.bonjin.portfolio.domain.Reply;
-import kr.co.bonjin.portfolio.domain.Work;
-import kr.co.bonjin.portfolio.domain.WorkType;
+import kr.co.bonjin.portfolio.domain.*;
+import kr.co.bonjin.portfolio.repository.ServiceRepository;
 import kr.co.bonjin.portfolio.service.MemberService;
 import kr.co.bonjin.portfolio.service.ReplyService;
 import kr.co.bonjin.portfolio.service.WorkService;
@@ -20,15 +18,19 @@ public class DevelopmentConfig {
     @Bean
     public CommandLineRunner dataLoader(MemberService memberService,
                                         WorkService workService,
-                                        ReplyService replyService) {
+                                        ReplyService replyService,
+                                        ServiceRepository serviceRepository) {
         return args -> {
 
+            // Member
             Member member = Member.builder()
                     .name("GIGAS")
                     .image("http://gigas.synology.me/portfolio/images/man-profile-512x512.png")
                     .build();
             memberService.save(member);
 
+
+            // Work
             Work work1 = Work.builder()
                     .name("Genius CHOI")
                     .content("This is my first portfolio.")
@@ -49,6 +51,8 @@ public class DevelopmentConfig {
                     .build();
             workService.save(work2);
 
+
+            // Reply
             Reply reply1 = Reply.builder()
                     .name("GIGAS")
                     .content("Will you study for life?")
@@ -62,6 +66,39 @@ public class DevelopmentConfig {
                     .image("http://gigas.synology.me/portfolio/images/bonjin/logo.png")
                     .build();
             replyService.save(reply2);
+
+            // Service
+            Service service1 = Service.builder()
+                    .title("Security")
+                    .conten("Strict security system.")
+                    .icon("la-shield-alt")
+                    .items(List.of("Per User Permissions", "Communication encryption", "Personal information security"))
+                    .build();
+            serviceRepository.save(service1);
+
+            Service service2 = Service.builder()
+                    .title("Mobile Applications")
+                    .conten("Mobile convenience features.")
+                    .icon("la-mobile")
+                    .items(List.of("Simple operation"))
+                    .build();
+            serviceRepository.save(service2);
+
+            Service service3 = Service.builder()
+                    .title("UX & UI Design")
+                    .conten("Neat design.")
+                    .icon("la-image")
+                    .items(List.of("Easy to see UI UX", "Preferred design"))
+                    .build();
+            serviceRepository.save(service3);
+
+            Service service4 = Service.builder()
+                    .title("Light")
+                    .conten("Fast and light.")
+                    .icon("la-feather-alt")
+                    .items(List.of("Smooth movement"))
+                    .build();
+            serviceRepository.save(service4);
         };
     }
 }

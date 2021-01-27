@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @Slf4j
@@ -35,9 +36,13 @@ public class WorkController {
 
     @GetMapping(value = "/{id}")
     public String workDetailPage(@PathVariable Long id, Model model) {
-        WorkResponseDto work = workService.findOne(id);
         List<WorkResponseDto> works = workService.findAll();
         List<ReplyResponseDto> replies = replyService.findAll();
+
+        WorkResponseDto work = works.stream()
+                .filter(f -> f.getWorkId().equals(id))
+                .findFirst()
+                .get();
 
         model.addAttribute("work", work);
         model.addAttribute("works", works);
