@@ -1,12 +1,10 @@
 package kr.co.bonjin.portfolio.domain;
 
 import lombok.Getter;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.Column;
-import javax.persistence.EntityListeners;
 import javax.persistence.MappedSuperclass;
 import java.time.LocalDateTime;
 
@@ -16,17 +14,15 @@ import java.time.LocalDateTime;
 @Getter
 // Jpa Entity 클래스들이 BaseTimeEntity를 상속할 경우 필드들(createdDate, modifiedData)도 칼럼으로 인식하도록 설정.
 @MappedSuperclass
-// BaseTimeEntity 클래스에 Auditing 기능을 포함.
-@EntityListeners(AuditingEntityListener.class)
 abstract class BaseEntity {
 
     // Entity가 생성되어 저장될 때 시간이 자동 저장.
-    @CreatedDate
+    @CreationTimestamp
     @Column(name="created_date", updatable = false)
     private LocalDateTime createdDate;
 
     // Entity의 값을 변경할 때 시간이 자동 저장.
-    @LastModifiedDate
+    @UpdateTimestamp
     @Column(name="modified_date")
     private LocalDateTime modifiedDate;
 }

@@ -19,4 +19,18 @@ public class ContactServiceImpl implements ContactService {
         contactRepository.save(contact);
         return contact.getId();
     }
+
+    @Transactional
+    @Override
+    public void contact(String name, String email, String subject, String message) {
+
+        Contact contact = Contact.builder()
+                .name(name)
+                .email(email)
+                .subject(subject)
+                .message(message)
+                .build();
+
+        contactRepository.save(contact);
+    }
 }

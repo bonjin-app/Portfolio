@@ -10,4 +10,6 @@ public interface ContactService {
      * @return
      */
     Long save(Contact contact);
+
+    void contact(String name, String email, String subject, String message);
 }
