@@ -102,24 +102,6 @@ spring:
         # dialect: org.hibernate.dialect.MySQL5InnoDBDialect
 
   # ===============================
-  # = Mail Config
-  # ===============================
-  mail:
-    host: smtp.gmail.com
-    # 465 또는 587
-    port: 587
-    # id
-    username: bonjin.app
-    # password
-    password: Cthqkqh88!
-    properties:
-      mail:
-        smtp:
-          auth: true
-          starttls:
-            enable: true
-
-  # ===============================
   # = BANNER (ANSI Shadow)
   # = http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20
   # ===============================

@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
  * 공통적으로 사용
  */
 @Getter
-// Jpa Entity 클래스들이 BaseTimeEntity를 상속할 경우 필드들(createdDate, modifiedData)도 칼럼으로 인식하도록 설정.
+// Jpa Entity 클래스들이 BaseEntity 상속할 경우 필드들(createdDate, modifiedDate)도 칼럼으로 인식하도록 설정.
 @MappedSuperclass
 abstract class BaseEntity {
 

@@ -17,7 +17,7 @@ class EmailServiceTest {
     @Autowired
     private EmailService emailService;
 
-    @Disabled("Disable until bug #1")
+//    @Disabled("Disable until bug #1")
     @Test
     @DisplayName("TEST Mail Sender")
     public void send() {
