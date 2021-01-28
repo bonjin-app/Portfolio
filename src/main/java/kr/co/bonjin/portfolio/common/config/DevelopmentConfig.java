@@ -1,6 +1,5 @@
 package kr.co.bonjin.portfolio.common.config;
 
-import com.sun.tools.javac.util.List;
 import kr.co.bonjin.portfolio.domain.*;
 import kr.co.bonjin.portfolio.service.MemberService;
 import kr.co.bonjin.portfolio.service.ReplyService;
@@ -10,6 +9,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Profile("!real")
 @Configuration
@@ -31,22 +33,32 @@ public class DevelopmentConfig {
 
 
             // Work
+            List workList1 = new ArrayList<>();
+            workList1.add("Design");
+            workList1.add("Xml");
+            workList1.add("Java");
+            workList1.add("Kotlin");
             Work work1 = Work.builder()
                     .name("Genius CHOI")
                     .content("This is my first portfolio.")
                     .image("http://gigas.synology.me/portfolio/images/work/geniuschoi.png")
                     .site("http://gigas.synology.me:7070/geniuschoi")
-                    .language(List.of("Design","Xml", "Java", "Kotlin"))
+                    .language(workList1)
                     .type(WorkType.WEB)
                     .build();
             workService.save(work1);
 
+            List workList2 = new ArrayList<>();
+            workList2.add("HTML5");
+            workList2.add("CSS3");
+            workList2.add("JavaScript");
+            workList2.add("Jquery");
             Work work2 = Work.builder()
                     .name("제주 생활방언")
                     .content("It is a dialect that originated in Jeju Island for a long time.")
                     .image("http://gigas.synology.me/portfolio/images/bonjin-work-01.png")
                     .site("https://play.google.com/store/apps/details?id=com.bonjin.B04")
-                    .language(List.of("HTML5","CSS3", "JavaScript", "Jquery"))
+                    .language(workList2)
                     .type(WorkType.APP)
                     .build();
             workService.save(work2);
@@ -68,35 +80,46 @@ public class DevelopmentConfig {
             replyService.save(reply2);
 
             // Service
+            List sList1 = new ArrayList<>();
+            sList1.add("Per User Permissions");
+            sList1.add("Communication encryption");
+            sList1.add("Personal information security");
             Service service1 = Service.builder()
                     .title("Security")
                     .conten("Strict security system.")
                     .icon("la-shield-alt")
-                    .items(List.of("Per User Permissions", "Communication encryption", "Personal information security"))
+                    .items(sList1)
                     .build();
             serviceService.save(service1);
 
+            List sList2 = new ArrayList<>();
+            sList2.add("Simple operation");
             Service service2 = Service.builder()
                     .title("Mobile Applications")
                     .conten("Mobile convenience features.")
                     .icon("la-mobile")
-                    .items(List.of("Simple operation"))
+                    .items(sList2)
                     .build();
             serviceService.save(service2);
 
+            List sList3 = new ArrayList<>();
+            sList3.add("Easy to see UI UX");
+            sList3.add("Preferred design");
             Service service3 = Service.builder()
                     .title("UX & UI Design")
                     .conten("Neat design.")
                     .icon("la-image")
-                    .items(List.of("Easy to see UI UX", "Preferred design"))
+                    .items(sList3)
                     .build();
             serviceService.save(service3);
 
+            List sList4 = new ArrayList<>();
+            sList4.add("Smooth movement");
             Service service4 = Service.builder()
                     .title("Light")
                     .conten("Fast and light.")
                     .icon("la-feather-alt")
-                    .items(List.of("Smooth movement"))
+                    .items(sList4)
                     .build();
             serviceService.save(service4);
         };

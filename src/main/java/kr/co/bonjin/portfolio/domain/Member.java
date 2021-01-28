@@ -27,6 +27,7 @@ public class Member extends BaseEntity {
     @Column(name = "image")
     private String image;
 
+    @Builder.Default
     @OneToMany(mappedBy = "member")
     private List<Skill> skills = new ArrayList<>();
 

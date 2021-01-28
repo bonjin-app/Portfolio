@@ -2,6 +2,7 @@ package kr.co.bonjin.portfolio.repository;
 
 import kr.co.bonjin.portfolio.domain.Work;
 import kr.co.bonjin.portfolio.domain.WorkType;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,7 @@ class WorkRepositoryTest {
     @DisplayName("Work Find All")
     public void loadWork() {
         //given
+        List<Work> before = workRepository.findAll();
         int maxSize = 10;
         IntStream.rangeClosed(1, maxSize)
                 .forEach(e -> {
@@ -41,11 +43,8 @@ class WorkRepositoryTest {
         List<Work> all = workRepository.findAll();
 
         //then
-        assertEquals(maxSize, all.size(),
-                "Work 10건을 생성했는데 전제 조회 했을시 10건이 맞는지 확인.");
-
-        assertEquals(all.size()/2, all.stream().filter(f -> f.getType() == WorkType.WEB).count(),
-                "APP 타입으로 5건 생성했는데 일치한지 확인.");
+        assertEquals(maxSize + before.size(), all.size());
+        assertEquals(all.size()/2, all.stream().filter(f -> f.getType() == WorkType.WEB).count());
     }
 
     @Test
