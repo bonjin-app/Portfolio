@@ -11,8 +11,8 @@
 - Spring Framework(Boot 2.4)
 - Data JPA
 - QueryDSL
-- MariaDB 5
-- Thymeleaf 3
+- MariaDB5
+- Thymeleaf3
 - HTML3/CSS3
 - JavaScript(ES6)
 - Gradle
