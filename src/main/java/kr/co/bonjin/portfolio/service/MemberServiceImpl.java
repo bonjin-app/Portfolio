@@ -17,7 +17,12 @@ public class MemberServiceImpl implements MemberService {
     @Transactional
     @Override
     public Long save(Member member) {
+        System.out.println("member1 = " + member);
         memberRepository.save(member);
+        System.out.println("member2 = " + member);
+
+        Member result = memberRepository.findOne(member.getId());
+
         return member.getId();
     }
 
