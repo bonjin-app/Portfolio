@@ -37,9 +37,7 @@ class MemberRepositoryTest {
 
     @BeforeEach
     public void init() {
-        Member member = new Member();
-
-
+        Member member = new Member("TAEHO", "");
 
         IntStream.rangeClosed(1, 3)
                 .forEach(e -> {
