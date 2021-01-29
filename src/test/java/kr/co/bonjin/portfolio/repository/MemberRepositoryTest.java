@@ -2,6 +2,8 @@ package kr.co.bonjin.portfolio.repository;
 
 import kr.co.bonjin.portfolio.domain.Member;
 import kr.co.bonjin.portfolio.domain.Skill;
+import kr.co.bonjin.portfolio.dto.MemberResponseDto;
+import kr.co.bonjin.portfolio.service.MemberService;
 import org.aspectj.lang.annotation.Before;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -25,6 +27,9 @@ class MemberRepositoryTest {
     MemberRepository memberRepository;
 
     @Autowired
+    MemberService memberService;
+
+    @Autowired
     SkillRepository skillRepository;
 
     @Autowired
@@ -34,18 +39,19 @@ class MemberRepositoryTest {
     public void init() {
         Member member = new Member();
 
-        memberRepository.save(member);
+
 
         IntStream.rangeClosed(1, 3)
                 .forEach(e -> {
                     Skill skill = Skill.builder()
                             .title("title" + e)
                             .progress(e)
-                            .member(member)
                             .build();
 
-                    skillRepository.save(skill);
+                    member.addSkill(skill);
                 });
+
+        memberRepository.save(member);
     }
 
     @Test
@@ -71,5 +77,12 @@ class MemberRepositoryTest {
         em.createQuery("select m from Member m" +
                 " join fetch m.works w", Member.class)
                 .getResultList();
+    }
+
+    @Test
+    public void findSkills() {
+        MemberResponseDto skills = memberService.findSkills("GIGAS");
+
+        System.out.println("skills = " + skills);
     }
 }

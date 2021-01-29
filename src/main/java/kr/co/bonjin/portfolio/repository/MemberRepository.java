@@ -25,6 +25,19 @@ public class MemberRepository {
     }
 
     /**
+     * Member name 으로 단건 조회
+     * @param name
+     * @return
+     */
+    public Member findOne(String name) {
+        Member member = em.createQuery("select m from Member m where m.name = :name",
+                Member.class)
+                .setParameter("name", name)
+                .getSingleResult();
+        return member;
+    }
+
+    /**
      * Member 전체 조회
      * @return
      */

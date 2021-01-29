@@ -26,10 +26,25 @@ public class DevelopmentConfig {
 
             // Member
             Member gigas = new Member("GIGAS", "http://gigas.synology.me/portfolio/images/man-profile-512x512.png");
+            gigas.addSkill(Skill.builder()
+                    .title("HTML5/CSS3")
+                    .progress(70)
+                    .build());
+
+            gigas.addSkill(Skill.builder()
+                    .title("HTML5/CSS3")
+                    .progress(70)
+                    .build());
+
+            gigas.addSkill(Skill.builder()
+                    .title("HTML5/CSS3")
+                    .progress(70)
+                    .build());
             memberService.save(gigas);
 
             Member bonjin = new Member("BONJIN", "http://gigas.synology.me/portfolio/images/bonjin/logo.png");
             memberService.save(bonjin);
+
 
             // Work
             List workList1 = new ArrayList<>();
@@ -62,15 +77,6 @@ public class DevelopmentConfig {
                     .build();
             workService.save(work2);
 
-
-            // Reply
-            Reply reply1 = new Reply("Will you study for life?");
-            reply1.setMember(gigas);
-            replyService.save(reply1);
-
-            Reply reply2 = new Reply("Team to develop while having fun.");
-            reply2.setMember(bonjin);
-            replyService.save(reply2);
 
             // Service
             List sList1 = new ArrayList<>();

@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @Getter
-@ToString
+@ToString(exclude = "member")
 @Table(name = "reply")
 public class Reply extends BaseEntity {
 
@@ -23,9 +23,7 @@ public class Reply extends BaseEntity {
     @OneToOne(fetch = FetchType.LAZY)
     private Member member;
 
-    protected Reply() {
-
-    }
+    protected Reply() {}
 
     public Reply(String content) {
         this.content = content;

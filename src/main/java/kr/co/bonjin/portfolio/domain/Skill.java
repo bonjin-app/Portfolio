@@ -24,8 +24,4 @@ public class Skill extends BaseEntity {
 
     @Column(name = "progress")
     private Integer progress;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "member_id")
-    private Member member;
 }

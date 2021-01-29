@@ -9,7 +9,6 @@ import java.util.List;
 
 @Entity
 @Getter
-@NoArgsConstructor
 @AllArgsConstructor
 @ToString
 @Table(name = "member")
@@ -27,16 +26,19 @@ public class Member extends BaseEntity {
     @Column(name = "image")
     private String image;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "member")
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "member_id")
     private List<Skill> skills = new ArrayList<>();
 
     @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "member_id")
     private Collection<Work> works = new ArrayList<>();
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "member")
     @JoinColumn(name = "member_id")
     private Reply reply;
+
+    protected Member() {}
 
     public Member(String name, String image) {
         this.name = name;
@@ -46,5 +48,9 @@ public class Member extends BaseEntity {
     //==연관관계 메서드==//
     public void setReply(Reply reply) {
         this.reply = reply;
+    }
+
+    public void addSkill(Skill skill) {
+        this.skills.add(skill);
     }
 }

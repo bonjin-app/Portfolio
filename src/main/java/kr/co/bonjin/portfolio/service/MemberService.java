@@ -1,6 +1,7 @@
 package kr.co.bonjin.portfolio.service;
 
 import kr.co.bonjin.portfolio.domain.Member;
+import kr.co.bonjin.portfolio.dto.MemberResponseDto;
 
 public interface MemberService {
 
@@ -10,4 +11,11 @@ public interface MemberService {
      * @return
      */
     Long save(Member member);
+
+    /**
+     *
+     * @param name
+     * @return
+     */
+    MemberResponseDto findSkills(String name);
 }
