@@ -32,8 +32,7 @@ class MemberRepositoryTest {
 
     @BeforeEach
     public void init() {
-        Member member = Member.builder()
-                .build();
+        Member member = new Member();
 
         memberRepository.save(member);
 
@@ -63,5 +62,14 @@ class MemberRepositoryTest {
 //                skill.getTitle();
 //            }
 //        }
+    }
+
+    @Test
+    public void findWork() {
+        em.find(Member.class, 1L);
+
+        em.createQuery("select m from Member m" +
+                " join fetch m.works w", Member.class)
+                .getResultList();
     }
 }

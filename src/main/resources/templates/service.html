@@ -44,11 +44,11 @@
 
             <div th:each="reply: ${replies}" class="testimonial-wrap">
               <div class="testimonial">
-                <img th:src="${reply.image}" alt="Image" class="img-fluid">
+                <img th:src="${reply.member.image}" alt="Image" class="img-fluid">
                 <blockquote>
                   <p th:text="${reply.content}"></p>
                 </blockquote>
-                <p th:text="${reply.name}"></p>
+                <p th:text="${reply.member.name}"></p>
               </div>
             </div>
           </div>

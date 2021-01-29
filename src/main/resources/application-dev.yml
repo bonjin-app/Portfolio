@@ -57,6 +57,15 @@ spring:
       max-request-size: 50MB
 
   # ===============================
+  # = DATA SOURCE (MARIADB)
+  # ===============================
+  datasource:
+    # 기본 DB
+    url: jdbc:mariadb://gigas.synology.me:3306/portfolio
+    username: bonjin
+    password: bonjin1234
+
+  # ===============================
   # = JPA / HIBERNATE
   # ===============================
   # SQL 문장의 로깅 활성화

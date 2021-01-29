@@ -4,11 +4,11 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 @Entity
 @Getter
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
@@ -21,14 +21,30 @@ public class Member extends BaseEntity {
     @Column(name = "member_id")
     private Long id;
 
-    @Column(name = "name")
+    @Column(name = "name", unique = true)
     private String name;
 
     @Column(name = "image")
     private String image;
 
-    @Builder.Default
-    @OneToMany(mappedBy = "member")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "member")
     private List<Skill> skills = new ArrayList<>();
 
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name = "member_id")
+    private Collection<Work> works = new ArrayList<>();
+
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "member_id")
+    private Reply reply;
+
+    public Member(String name, String image) {
+        this.name = name;
+        this.image = image;
+    }
+
+    //==연관관계 메서드==//
+    public void setReply(Reply reply) {
+        this.reply = reply;
+    }
 }

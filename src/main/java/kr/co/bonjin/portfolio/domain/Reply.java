@@ -6,9 +6,6 @@ import javax.persistence.*;
 
 @Entity
 @Getter
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
 @ToString
 @Table(name = "reply")
 public class Reply extends BaseEntity {
@@ -19,15 +16,24 @@ public class Reply extends BaseEntity {
     @Column(name = "reply_id")
     private Long id;
 
-    // 이름
-    @Column(name = "name")
-    private String name;
-
     // 내용
     @Column(name = "content")
     private String content;
 
-    // 이미지 주소
-    @Column(name = "image")
-    private String image;
+    @OneToOne(fetch = FetchType.LAZY)
+    private Member member;
+
+    protected Reply() {
+
+    }
+
+    public Reply(String content) {
+        this.content = content;
+    }
+
+    //==연관관계 메서드==//
+    public void setMember(Member member) {
+        this.member = member;
+        member.setReply(this);
+    }
 }

@@ -25,12 +25,11 @@ public class DevelopmentConfig {
         return args -> {
 
             // Member
-            Member member = Member.builder()
-                    .name("GIGAS")
-                    .image("http://gigas.synology.me/portfolio/images/man-profile-512x512.png")
-                    .build();
-            memberService.save(member);
+            Member gigas = new Member("GIGAS", "http://gigas.synology.me/portfolio/images/man-profile-512x512.png");
+            memberService.save(gigas);
 
+            Member bonjin = new Member("BONJIN", "http://gigas.synology.me/portfolio/images/bonjin/logo.png");
+            memberService.save(bonjin);
 
             // Work
             List workList1 = new ArrayList<>();
@@ -65,18 +64,12 @@ public class DevelopmentConfig {
 
 
             // Reply
-            Reply reply1 = Reply.builder()
-                    .name("GIGAS")
-                    .content("Will you study for life?")
-                    .image("http://gigas.synology.me/portfolio/images/man-profile-512x512.png")
-                    .build();
+            Reply reply1 = new Reply("Will you study for life?");
+            reply1.setMember(gigas);
             replyService.save(reply1);
 
-            Reply reply2 = Reply.builder()
-                    .name("BONJIN")
-                    .content("Team to develop while having fun.")
-                    .image("http://gigas.synology.me/portfolio/images/bonjin/logo.png")
-                    .build();
+            Reply reply2 = new Reply("Team to develop while having fun.");
+            reply2.setMember(bonjin);
             replyService.save(reply2);
 
             // Service
