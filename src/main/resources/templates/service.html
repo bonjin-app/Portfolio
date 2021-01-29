@@ -34,27 +34,6 @@
           </div>
         </div>
       </div>
-
-
-      <!-- START REPLY -->
-      <div class="site-section">
-        <div class="container">
-
-          <div class="owl-carousel testimonial-carousel">
-
-            <div th:each="reply: ${replies}" class="testimonial-wrap">
-              <div class="testimonial">
-                <img th:src="${reply.member.image}" alt="Image" class="img-fluid">
-                <blockquote>
-                  <p th:text="${reply.content}"></p>
-                </blockquote>
-                <p th:text="${reply.member.name}"></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- END REPLY -->
     </div>
   </main>
 

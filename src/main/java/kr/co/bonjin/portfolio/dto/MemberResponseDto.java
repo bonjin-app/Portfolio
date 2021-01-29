@@ -18,6 +18,7 @@ public class MemberResponseDto {
 
     public MemberResponseDto(Member member, List<Skill> skills) {
         this.name = member.getName();
+        this.image = member.getImage();
         this.skills = skills.stream()
                         .map(SkillItemDto::new)
                         .collect(Collectors.toList());

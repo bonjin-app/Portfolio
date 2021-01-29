@@ -26,20 +26,14 @@ public class DevelopmentConfig {
 
             // Member
             Member gigas = new Member("GIGAS", "http://gigas.synology.me/portfolio/images/man-profile-512x512.png");
-            gigas.addSkill(Skill.builder()
-                    .title("HTML5/CSS3")
-                    .progress(70)
-                    .build());
-
-            gigas.addSkill(Skill.builder()
-                    .title("HTML5/CSS3")
-                    .progress(70)
-                    .build());
-
-            gigas.addSkill(Skill.builder()
-                    .title("HTML5/CSS3")
-                    .progress(70)
-                    .build());
+            gigas.addSkill(Skill.builder().title("Java").progress(100).build());
+            gigas.addSkill(Skill.builder().title("Spring Framework(Boot)").progress(90).build());
+            gigas.addSkill(Skill.builder().title("Swift").progress(80).build());
+            gigas.addSkill(Skill.builder().title("Flutter").progress(70).build());
+            gigas.addSkill(Skill.builder().title("SQL").progress(60).build());
+            gigas.addSkill(Skill.builder().title("HTML5/CSS3").progress(50).build());
+            gigas.addSkill(Skill.builder().title("JavaScript").progress(40).build());
+            gigas.addSkill(Skill.builder().title("PhotoShop").progress(30).build());
             memberService.save(gigas);
 
             Member bonjin = new Member("BONJIN", "http://gigas.synology.me/portfolio/images/bonjin/logo.png");
@@ -77,6 +71,15 @@ public class DevelopmentConfig {
                     .build();
             workService.save(work2);
 
+
+            // Reply
+            Reply reply1 = new Reply("Will you study for life?");
+            reply1.setMember(gigas);
+            replyService.save(reply1);
+
+            Reply reply2 = new Reply("Team to develop while having fun.");
+            reply2.setMember(bonjin);
+            replyService.save(reply2);
 
             // Service
             List sList1 = new ArrayList<>();

@@ -1,8 +1,6 @@
 package kr.co.bonjin.portfolio.web;
 
-import kr.co.bonjin.portfolio.dto.ReplyResponseDto;
 import kr.co.bonjin.portfolio.dto.WorkResponseDto;
-import kr.co.bonjin.portfolio.service.ReplyService;
 import kr.co.bonjin.portfolio.service.WorkService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -13,7 +11,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
-import java.util.Optional;
 
 @Controller
 @Slf4j
@@ -22,22 +19,18 @@ import java.util.Optional;
 public class WorkController {
 
     private final WorkService workService;
-    private final ReplyService replyService;
 
     @GetMapping
     public String workPage(Model model) {
         List<WorkResponseDto> works = workService.findAll();
-        List<ReplyResponseDto> replies = replyService.findAll();
 
         model.addAttribute("works", works);
-        model.addAttribute("replies", replies);
         return "work";
     }
 
     @GetMapping(value = "/{id}")
     public String workDetailPage(@PathVariable Long id, Model model) {
         List<WorkResponseDto> works = workService.findAll();
-        List<ReplyResponseDto> replies = replyService.findAll();
 
         WorkResponseDto work = works.stream()
                 .filter(f -> f.getWorkId().equals(id))
@@ -46,7 +39,6 @@ public class WorkController {
 
         model.addAttribute("work", work);
         model.addAttribute("works", works);
-        model.addAttribute("replies", replies);
         return "work-detail";
     }
 }
