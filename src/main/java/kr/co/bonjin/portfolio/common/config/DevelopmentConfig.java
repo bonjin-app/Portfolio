@@ -27,13 +27,13 @@ public class DevelopmentConfig {
             // Member
             Member gigas = new Member("GIGAS", "http://gigas.synology.me/portfolio/images/man-profile-512x512.png");
             gigas.addSkill(Skill.builder().title("Java").progress(100).build());
-            gigas.addSkill(Skill.builder().title("Spring Framework(Boot)").progress(90).build());
-            gigas.addSkill(Skill.builder().title("Swift").progress(80).build());
-            gigas.addSkill(Skill.builder().title("Flutter").progress(70).build());
-            gigas.addSkill(Skill.builder().title("SQL").progress(60).build());
-            gigas.addSkill(Skill.builder().title("HTML5/CSS3").progress(50).build());
-            gigas.addSkill(Skill.builder().title("JavaScript").progress(40).build());
-            gigas.addSkill(Skill.builder().title("PhotoShop").progress(30).build());
+            gigas.addSkill(Skill.builder().title("Spring Framework(Boot)").progress(100).build());
+            gigas.addSkill(Skill.builder().title("Swift").progress(100).build());
+            gigas.addSkill(Skill.builder().title("Flutter").progress(100).build());
+            gigas.addSkill(Skill.builder().title("SQL").progress(100).build());
+            gigas.addSkill(Skill.builder().title("HTML5/CSS3").progress(100).build());
+            gigas.addSkill(Skill.builder().title("JavaScript").progress(100).build());
+            gigas.addSkill(Skill.builder().title("PhotoShop").progress(100).build());
             memberService.save(gigas);
 
             Member bonjin = new Member("BONJIN", "http://gigas.synology.me/portfolio/images/bonjin/logo.png");
