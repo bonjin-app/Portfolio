@@ -43,9 +43,8 @@ public class DevelopmentConfig {
             // Work
             List workList1 = new ArrayList<>();
             workList1.add("Design");
-            workList1.add("Xml");
-            workList1.add("Java");
-            workList1.add("Kotlin");
+            workList1.add("HTML5/CSS3");
+            workList1.add("JavaScript(Jquery)");
             Work work1 = Work.builder()
                     .name("Genius CHOI")
                     .content("This is my first portfolio.")
@@ -57,10 +56,11 @@ public class DevelopmentConfig {
             workService.save(work1);
 
             List workList2 = new ArrayList<>();
-            workList2.add("HTML5");
-            workList2.add("CSS3");
-            workList2.add("JavaScript");
-            workList2.add("Jquery");
+            workList2.add("Java");
+            workList2.add("Spring Framework(Boot)");
+            workList2.add("RESTful");
+            workList2.add("Kotlin");
+            workList2.add("Open API");
             Work work2 = Work.builder()
                     .name("제주 생활방언")
                     .content("It is a dialect that originated in Jeju Island for a long time.")
@@ -70,6 +70,41 @@ public class DevelopmentConfig {
                     .type(WorkType.APP)
                     .build();
             workService.save(work2);
+
+            List workList3 = new ArrayList<>();
+            workList3.add("Java");
+            workList3.add("Spring Framework(Boot)");
+            workList3.add("Security");
+            workList3.add("JPA");
+            workList3.add("H2/MariaDB");
+            workList3.add("HTML5/CSS3");
+            workList3.add("Bootstrap");
+            workList3.add("JavaScript(Jquery)");
+            Work work3 = Work.builder()
+                    .name("아이돌 관리자")
+                    .content("This site manages idol information.")
+                    .image("http://gigas.synology.me/portfolio/images/work/idol.png")
+                    .site("http://gigas.synology.me:9091")
+                    .language(workList3)
+                    .type(WorkType.WEB)
+                    .build();
+            workService.save(work3);
+
+            List workList4 = new ArrayList<>();
+            workList4.add("Dart");
+            workList4.add("Flutter");
+            workList4.add("Swift");
+            workList4.add("Kotlin");
+            workList4.add("Open API");
+            Work work4 = Work.builder()
+                    .name("제줏말싸미")
+                    .content("It is an app that provides users with information related to the Jeju language, such as living dialects and proverbs of Jeju Island, and live mermaids.")
+                    .image("http://gigas.synology.me/portfolio/images/work/jeju_dialect.png")
+                    .site("https://play.google.com/store/apps/details?id=kr.co.bonjin.jejudialect")
+                    .language(workList4)
+                    .type(WorkType.APP)
+                    .build();
+            workService.save(work4);
 
 
             // Reply

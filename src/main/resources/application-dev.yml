@@ -10,7 +10,7 @@
 server:
 
   # Server Port
-  port: 8090
+  port: 9090
 
   # whitelabel 기본 오류 페이지 비활성화
   error:
